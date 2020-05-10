@@ -2,7 +2,7 @@
 
 > Um bot para o grupo Novo DevOps BR no Telegram
 
-Esse projeto provisiona os recursos utilizados pelo bot do grupo Novo DevOps BR no Telegram.
+Esse projeto provisiona os recursos utilizados pelo bot do grupo [Novo DevOps BR](https://t.me/novodevopsbr) no Telegram.
 
 ## Instalação
 

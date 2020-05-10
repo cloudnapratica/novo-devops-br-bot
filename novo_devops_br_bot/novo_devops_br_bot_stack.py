@@ -1,8 +1,11 @@
 from aws_cdk import (
     core,
+    aws_cloudwatch as _cw,
+    aws_cloudwatch_actions as _cw_actions,
     aws_events as _events,
     aws_events_targets as _events_targets,
     aws_lambda as _lambda,
+    aws_sns as _sns,
     aws_ssm as _ssm
 )
 
@@ -77,11 +80,21 @@ class NovoDevopsBrBotStack(core.Stack):
             description="Sends one video from FiqueEmCasaConf to Telegram every day",
             enabled=True if 'Prod' in id else False,
             schedule=_events.Schedule.expression(
-                expression='cron(0 12 * * ? *)'
+                expression='cron(0 15 * * ? *)'
             ),
             targets=[
                 _events_targets.LambdaFunction(function)
             ]
         )
 
-        # TODO: Error notifications
+        error_notifications = _sns.Topic(self, 'ErrorNotifications')
+        fique_em_casa_conf_alarm = _cw.Alarm(
+            self,
+            'FiqueEmCasaConfErrors',
+            metric=function.metric_errors(),
+            threshold=1,
+            evaluation_periods=1
+        )
+        fique_em_casa_conf_alarm.add_alarm_action(
+            _cw_actions.SnsAction(error_notifications)
+        )

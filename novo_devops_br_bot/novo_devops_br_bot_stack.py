@@ -92,8 +92,9 @@ class NovoDevopsBrBotStack(core.Stack):
             self,
             'FiqueEmCasaConfErrors',
             metric=function.metric_errors(),
-            threshold=1,
-            evaluation_periods=1
+            threshold=0,
+            evaluation_periods=1,
+            comparison_operator=_cw.ComparisonOperator.GREATER_THAN_THRESHOLD
         )
         fique_em_casa_conf_alarm.add_alarm_action(
             _cw_actions.SnsAction(error_notifications)

@@ -28,7 +28,8 @@ setuptools.setup(
         "aws_cdk.aws_sns==1.38.0",
         "aws_cdk.aws_ssm==1.38.0",
         "autopep8==1.5.2",
-        "moto==1.3.14",
+        "moto==2.0.2",
+        "pytest-cov==2.11.1",
         "pytest-env==0.6.2",
         "requests==2.23.0",
         "requests-mock==1.8.0"

@@ -24,7 +24,7 @@ class NovoDevopsBrBotStack(core.Stack):
 
         yt_list_id = _ssm.StringParameter(
             self,
-            'FiqueEmCasaConfPlayListId',
+            'YouTubePlayListId',
             parameter_name=f"/{id}/YouTubePlayListId",
             string_value='PLf-O3X2-mxDmn0ikyO7OF8sPr2GDQeZXk'
         )

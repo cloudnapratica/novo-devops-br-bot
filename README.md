@@ -4,6 +4,10 @@
 
 Esse projeto provisiona os recursos utilizados pelo bot do grupo [Novo DevOps BR](https://t.me/novodevopsbr) no Telegram.
 
+## Arquitetura
+
+![Arquitetura](docs/architecture.png)
+
 ## Instalação
 
 Para rodar esse projeto, você vai precisar ter o AWS CDK instalado na sua máquina.

@@ -31,7 +31,7 @@ setuptools.setup(
         "moto==2.0.2",
         "pytest-cov==2.11.1",
         "pytest-env==0.6.2",
-        "requests==2.23.0",
+        "requests==2.31.0",
         "requests-mock==1.8.0"
     ],
 
